@@ -165,7 +165,8 @@ export default function TableTools({ editor }: Props) {
         if (!table || !dispatch) return true
 
         const map = TableMap.get(table)
-        const cell = side === 'bottom' ? map.map[(map.height - 1) * map.width] : map.map[map.width - 1]
+        const cell =
+          side === 'bottom' ? map.map[(map.height - 1) * map.width] : map.map[map.width - 1]
         dispatch(tr.setSelection(TextSelection.near(tr.doc.resolve(spot.pos + 1 + cell + 1))))
 
         return true
@@ -191,7 +192,7 @@ export default function TableTools({ editor }: Props) {
         // ProseMirror before the command runs.
         onMouseDown={(event) => event.preventDefault()}
         onClick={() => add(side, spot)}
-        className="table-append pointer-events-auto absolute"
+        className="pointer-events-auto absolute grid place-items-center border border-(--md-rule) bg-(--md-surface-soft) text-(--md-ink-faint) transition-colors hover:bg-violet-50 hover:text-(--md-accent) [&_svg]:size-3"
         // Which way the table is about to grow.
         style={{ ...place, cursor: side === 'bottom' ? 's-resize' : 'e-resize' }}
       >

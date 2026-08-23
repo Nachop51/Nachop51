@@ -1,5 +1,12 @@
 {
   "lsp": {
+    "typescript-language-server": {
+      "initialization_options": {
+        "preferences": {
+          "importModuleSpecifier": "non-relative"
+        }
+      }
+    },
     "oxlint": {
       "initialization_options": {
         "settings": {

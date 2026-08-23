@@ -108,7 +108,7 @@ export default function TipTap({ initial, onChange }: Props) {
     editorProps: {
       // `markdown` is the shared content class -> see shared/markdown.css.
       // It goes on the ProseMirror root so the editable area *is* the article.
-      attributes: { class: 'markdown' },
+      attributes: { class: 'markdown min-h-[60vh]' },
       handlePaste: (_view, event) => {
         const files = Array.from(event.clipboardData?.files ?? [])
         if (files.length === 0) return false

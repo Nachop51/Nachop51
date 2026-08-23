@@ -74,7 +74,7 @@ const showInsert: NonNullable<FloatingMenuProps['shouldShow']> = ({ editor, stat
 // translucent shows the text through it.
 const MENU_CLASS =
   'flex items-center gap-0.5 rounded-xl border border-neutral-200 bg-white p-1 ' +
-  'shadow-lg shadow-neutral-900/10 animate-[menu-in_120ms_ease-out]'
+  'shadow-lg shadow-neutral-900/10'
 
 type ButtonProps = {
   title: string

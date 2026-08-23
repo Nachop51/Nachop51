@@ -9,6 +9,9 @@ export default defineConfig({
   server: {
     proxy: { '/api': 'http://localhost:1234' },
   },
+  resolve: {
+    tsconfigPaths: true,
+  },
   build: {
     outDir: '../internal/web/dist',
     emptyOutDir: true,

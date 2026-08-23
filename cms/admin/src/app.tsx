@@ -1,20 +1,19 @@
 import { Route, Switch } from 'wouter'
-import AdminNav from './components/admin-nav'
+import Navbar from './components/common/navbar'
 import HomePage from './pages/home'
 import PostPage from './pages/posts/post'
+import NotFoundPage from './pages/404'
 
 function App() {
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-900">
-      <AdminNav />
+    <div className="min-h-screen bg-background text-foreground">
+      <Navbar />
+
       <Switch>
         <Route path="/" component={HomePage} />
         <Route path="/posts/:id">{(params: { id: string }) => <PostPage id={params.id} />}</Route>
-        <Route path="*">
-          <main className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
-            <h1>Page not found</h1>
-          </main>
-        </Route>
+
+        <Route path="*" component={NotFoundPage} />
       </Switch>
     </div>
   )
